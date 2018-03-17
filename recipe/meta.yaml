@@ -1,6 +1,6 @@
 {% set name = "tetgen" %}
-{% set version = "1.5.0" %}
-{% set sha256 = "4d114861d5ef2063afd06ef38885ec46822e90e7b4ea38c864f76493451f9cf3" %}
+{% set version = "1.5.1" %}
+{% set sha256 = "51ff3af2cc05e18f4c8e15c46d07fd40fd57d1c40c9838b6d0533711f75ffdf5" %}
 
 package:
   name: {{ name|lower }}
