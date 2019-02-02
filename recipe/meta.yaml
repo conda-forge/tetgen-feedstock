@@ -20,14 +20,9 @@ build:
 
 requirements:
   build:
-    - python  # [win]
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - cmake >2.8  # [win]
-
-  run:
-    - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and (py35 or py36)]
 
 test:
   commands:
