@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-make tetgen tetlib
-mkdir -p "$PREFIX/bin"
-mkdir -p "$PREFIX/lib"
-mkdir -p "$PREFIX/include"
-cp tetgen "$PREFIX/bin"
-cp libtet.a "$PREFIX/lib"
-cp tetgen.h "$PREFIX/include"
+cmake -H. \
+    -Bbuild -GNinja \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_PREFIX_PATH=$PREFIX \
+    -DCMAKE_INSTALL_PREFIX=$PREFIX
+cmake --build build/ -- -j${CPU_COUNT}
+cmake --build build/ -- install

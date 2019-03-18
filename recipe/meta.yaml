@@ -1,6 +1,6 @@
 {% set name = "tetgen" %}
 {% set version = "1.5.1" %}
-{% set sha256 = "51ff3af2cc05e18f4c8e15c46d07fd40fd57d1c40c9838b6d0533711f75ffdf5" %}
+{% set sha256 = "e46a4434a3e7c00044c8f4f167e18b6f4a85be7d22838c8f948ce8cc8c01b850" %}
 
 package:
   name: {{ name|lower }}
@@ -10,9 +10,11 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://wias-berlin.de/software/tetgen/1.5/src/tetgen{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Add-cmake-install-directive-for-targets.patch
 
 build:
-  number: 0
+  number: 1000
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
@@ -20,14 +22,10 @@ build:
 
 requirements:
   build:
-    - python  # [win]
-    - toolchain
-    - cmake >2.8  # [win]
-
-  run:
-    - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and (py35 or py36)]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake >2.8
+    - ninja
 
 test:
   commands:
