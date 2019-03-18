@@ -1,0 +1,30 @@
+From 94b196aa9ad91b46d45325a7838cbc2b91bcfd3e Mon Sep 17 00:00:00 2001
+From: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date: Mon, 18 Mar 2019 09:32:18 +0530
+Subject: [PATCH] Add cmake install() directive for targets
+
+---
+ CMakeLists.txt | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4e24a36..dac2cb4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,4 +11,11 @@ add_library(tet STATIC tetgen.cxx predicates.cxx)
+ #Set properties on a target. 
+ #We use this here to set -DTETLIBRARY for when compiling the
+ #library
+-set_target_properties(tet PROPERTIES "COMPILE_DEFINITIONS" TETLIBRARY)
+\ No newline at end of file
++set_target_properties(tet PROPERTIES "COMPILE_DEFINITIONS" TETLIBRARY)
++
++install(TARGETS tetgen
++    DESTINATION bin)
++install(TARGETS tet
++    DESTINATION lib)
++install(FILES tetgen.h
++    DESTINATION include)
+-- 
+2.20.1
+
