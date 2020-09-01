@@ -1,6 +1,6 @@
 {% set name = "tetgen" %}
-{% set version = "1.5.1" %}
-{% set sha256 = "e46a4434a3e7c00044c8f4f167e18b6f4a85be7d22838c8f948ce8cc8c01b850" %}
+{% set version = "1.6.0" %}
+{% set sha256 = "87b5e61ebd3a471fc4f2cdd7124c2b11dd6639f4feb1f941a5d2f5110d05ce39" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
     - 0001-Add-cmake-install-directive-for-targets.patch
 
 build:
-  number: 1000
+  number: 0
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
@@ -32,7 +32,6 @@ test:
     - test -f ${PREFIX}/bin/tetgen  # [unix]
     - test -f ${PREFIX}/lib/libtet.a  # [unix]
     - test -f ${PREFIX}/include/tetgen.h  # [unix]
-    
     - if not exist %LIBRARY_INC%\\tetgen.h exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\tet.lib exit 1  # [win]
     - if not exist %LIBRARY_BIN%\\tetgen.exe exit 1  # [win]
@@ -41,7 +40,7 @@ about:
   home: http://wias-berlin.de/software/tetgen
   license: AGPLv3
   license_file: LICENSE
-  summary: 'A Quality Tetrahedral Mesh Generator and a 3D Delaunay Triangulator'
+  summary: A Quality Tetrahedral Mesh Generator and a 3D Delaunay Triangulator
 
   description: |
     TetGen is a program to generate tetrahedral meshes of any 3D polyhedral
