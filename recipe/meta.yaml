@@ -34,7 +34,7 @@ test:
 
 about:
   home: http://wias-berlin.de/software/tetgen
-  license: AGPLv3
+  license: AGPL-3.0-or-later
   license_file: LICENSE
   summary: A Quality Tetrahedral Mesh Generator and a 3D Delaunay Triangulator
   description: |
