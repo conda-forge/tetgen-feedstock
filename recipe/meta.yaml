@@ -37,11 +37,10 @@ about:
   license: AGPLv3
   license_file: LICENSE
   summary: A Quality Tetrahedral Mesh Generator and a 3D Delaunay Triangulator
-
   description: |
     TetGen is a program to generate tetrahedral meshes of any 3D polyhedral
     domains. TetGen generates exact constrained Delaunay tetrahedralizations,
-    boundary conforming Delaunay meshes, and Voronoi partitions. 
+    boundary conforming Delaunay meshes, and Voronoi partitions.
 
 extra:
   recipe-maintainers:
