@@ -8,6 +8,7 @@ cd build
 cmake -G "NMake Makefiles" ^
     -D CMAKE_BUILD_TYPE=Release ^
     -D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+    -D CMAKE_POLICY_VERSION_MINIMUM=3.5 ^
     -D CMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
     %SRC_DIR%
 if errorlevel 1 exit 1
